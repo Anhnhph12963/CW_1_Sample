@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.resident.ResidentRegisterConfirmFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmNameLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/label_name"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fmResidentRegisterConfirmNameLabel"
+            app:layout_constraintTop_toTopOf="@+id/fmResidentRegisterConfirmNameLabel" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmStartDateLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_start_date"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmNameLabel"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmResidentRegisterConfirmName" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmStartDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmName"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmName"
+            app:layout_constraintTop_toTopOf="@+id/fmResidentRegisterConfirmStartDateLabel" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmOwnerLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_type"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmStartDateLabel"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmStartDateLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmResidentRegisterConfirmStartDate" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmOwner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmStartDate"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmStartDate"
+            app:layout_constraintTop_toTopOf="@+id/fmResidentRegisterConfirmOwnerLabel" />
+
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmDestinationLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_destination"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmOwnerLabel"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmOwnerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmResidentRegisterConfirmOwnerLabel" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fmResidentRegisterConfirmDestinationLabel"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmStartDate"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmStartDate"
+            app:layout_constraintTop_toTopOf="@+id/fmResidentRegisterConfirmDestinationLabel" />
+
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmNoteLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_note"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmDestinationLabel"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmDestinationLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmResidentRegisterConfirmDestinationLabel" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fmResidentRegisterConfirmNoteLabel"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmDestination"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmDestination"
+            app:layout_constraintTop_toTopOf="@+id/fmResidentRegisterConfirmNoteLabel" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmCommentLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_comment"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmNoteLabel"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmNoteLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmResidentRegisterConfirmNoteLabel" />
+
+        <TextView
+            android:id="@+id/fmResidentRegisterConfirmComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fmResidentRegisterConfirmCommentLabel"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmDestination"
+            app:layout_constraintStart_toStartOf="@+id/fmResidentRegisterConfirmDestination"
+            app:layout_constraintTop_toTopOf="@+id/fmResidentRegisterConfirmCommentLabel" />
+        <Button
+            android:id="@+id/fmResidentRegisterConfirmButtonCancel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/label_cancel"
+            android:backgroundTint="@color/teal_200"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmResidentRegisterConfirmComment"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fmResidentRegisterConfirmComment" />
+
+        <Button
+            android:id="@+id/fmResidentRegisterConfirmButtonConfirm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/teal_200"
+            android:text="@string/label_confirm"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fmResidentRegisterConfirmButtonCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/fmResidentRegisterConfirmButtonCancel"
+            app:layout_constraintTop_toTopOf="@+id/fmResidentRegisterConfirmButtonCancel"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/green"
+            android:padding="15dp"
+            android:backgroundTint="@color/teal_200"
+            android:text="@string/label_confirmation"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
