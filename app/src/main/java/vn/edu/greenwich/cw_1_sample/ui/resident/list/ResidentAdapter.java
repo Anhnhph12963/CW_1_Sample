@@ -8,7 +8,6 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
@@ -41,10 +40,11 @@ public class ResidentAdapter extends RecyclerView.Adapter<ResidentAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Resident resident = _list.get(position);
-
+        int a = position+1;
         String owner = holder.itemView.getResources().getString(R.string.label_owner);
         String tenant = holder.itemView.getResources().getString(R.string.label_tenant);
-
+        holder.listItemResidentDestination.setText(resident.get_destination());
+        holder.listItemResidentNumber.setText(String.valueOf(a));
         holder.listItemResidentName.setText(resident.getName());
         holder.listItemResidentStartDate.setText(resident.getStartDate());
         holder.listItemResidentOwner.setText(resident.getOwner() == 1 ? owner : tenant);
@@ -89,11 +89,12 @@ public class ResidentAdapter extends RecyclerView.Adapter<ResidentAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         protected LinearLayout listItemResident;
-        protected TextView listItemResidentName, listItemResidentStartDate, listItemResidentOwner;
+        protected TextView listItemResidentName, listItemResidentStartDate, listItemResidentOwner,listItemResidentNumber,listItemResidentDestination;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
+            listItemResidentDestination = itemView.findViewById(R.id.listItemResidentDestination);
+            listItemResidentNumber = itemView.findViewById(R.id.listItemResidentNumber);
             listItemResidentName = itemView.findViewById(R.id.listItemResidentName);
             listItemResidentStartDate = itemView.findViewById(R.id.listItemResidentStartDate);
             listItemResidentOwner = itemView.findViewById(R.id.listItemResidentOwner);

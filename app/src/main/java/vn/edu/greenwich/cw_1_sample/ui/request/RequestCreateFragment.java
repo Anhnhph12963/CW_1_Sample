@@ -13,6 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import vn.edu.greenwich.cw_1_sample.R;
 import vn.edu.greenwich.cw_1_sample.models.Request;
 import vn.edu.greenwich.cw_1_sample.ui.dialog.DatePickerFragment;
@@ -110,16 +112,21 @@ public class RequestCreateFragment extends DialogFragment
     protected void createRequest() {
         Log.d("getMoney", "createRequest:" +fmRequestCreateMoney.getText().toString());
         Request request = new Request();
-        request.setMoney(Integer.parseInt(fmRequestCreateMoney.getText().toString()));
-        Log.d("getMoney", "createRequest:" +request.getMoney());
-        request.setType(fmRequestCreateType.getSelectedItem().toString());
-        request.setTime(fmRequestCreateTime.getText().toString());
-        request.setDate(fmRequestCreateDate.getText().toString());
-        request.setContent(fmRequestCreateContent.getText().toString());
-        FragmentListener listener = (FragmentListener) getParentFragment();
-        listener.sendFromRequestCreateFragment(request);
+        if (fmRequestCreateMoney.getText().toString().isEmpty()|| fmRequestCreateType.getSelectedItem().toString().isEmpty() || fmRequestCreateTime.getText().toString().isEmpty() || fmRequestCreateContent.getText().toString().isEmpty()){
+            Toast.makeText(requireContext(), "Please enter all information ?",Toast.LENGTH_SHORT).show();
+        }else {
+            request.setMoney(Integer.parseInt(fmRequestCreateMoney.getText().toString()));
+            Log.d("getMoney", "createRequest:" + request.getMoney());
+            request.setType(fmRequestCreateType.getSelectedItem().toString());
+            request.setTime(fmRequestCreateTime.getText().toString());
+            request.setDate(fmRequestCreateDate.getText().toString());
+            request.setContent(fmRequestCreateContent.getText().toString());
 
-        dismiss();
+            FragmentListener listener = (FragmentListener) getParentFragment();
+            listener.sendFromRequestCreateFragment(request);
+
+            dismiss();
+        }
     }
 
     public interface FragmentListener {

@@ -29,7 +29,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Request request = _list.get(position);
-
+        holder.listItemRequestMoney.setText(request.getMoney()+"");
         holder.listItemRequestDate.setText(request.getDate());
         holder.listItemRequestTime.setText(request.getTime());
         holder.listItemRequestType.setText(request.getType());
@@ -42,11 +42,11 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        protected TextView listItemRequestDate, listItemRequestTime, listItemRequestType, listItemRequestContent;
+        protected TextView listItemRequestDate, listItemRequestTime, listItemRequestType, listItemRequestContent,listItemRequestMoney;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
+            listItemRequestMoney = itemView.findViewById(R.id.listItemRequestMoney);
             listItemRequestDate = itemView.findViewById(R.id.listItemRequestDate);
             listItemRequestTime = itemView.findViewById(R.id.listItemRequestTime);
             listItemRequestType = itemView.findViewById(R.id.listItemRequestType);
