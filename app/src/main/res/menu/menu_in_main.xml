@@ -4,14 +4,14 @@
     <item
         android:id="@+id/residentListFragment"
         android:icon="@drawable/img"
-        android:title="@string/menu_in_main_list" />
+        android:title="Trip" />
     <item
         android:id="@+id/residentRegisterFragment"
         android:icon="@drawable/img_1"
-        android:title="@string/menu_in_main_register" />
+        android:title="Search" />
     <item
         android:id="@+id/aboutUsFragment"
         android:icon="@android:drawable/ic_dialog_info"
-        android:title="@string/menu_in_main_about" />
+        android:title="@string/menu_in_main_upload_data" />
 
 </menu>
