@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import vn.edu.greenwich.cw_1_sample.R;
 import vn.edu.greenwich.cw_1_sample.database.ResimaDAO;
 import vn.edu.greenwich.cw_1_sample.models.Request;
@@ -31,7 +33,8 @@ public class ResidentDetailFragment extends Fragment
 
     protected ResimaDAO _db;
     protected Resident _resident;
-    protected Button fmResidentDetailRequestButton;
+    protected FloatingActionButton fab;
+    protected Button fmResidentDetailRequestButton,fmResidentDetailRequestButtonEdit,fmResidentDetailRequestButtonSee;
     protected BottomAppBar fmResidentDetailBottomAppBar;
     protected FragmentContainerView fmResidentDetailRequestList;
     protected TextView fmResidentDetailName, fmResidentDetailStartDate, fmResidentDetailOwner,  fmResidentDetailDestination , fmResidentDetailNote, fmResidentDetailComment;
@@ -48,19 +51,38 @@ public class ResidentDetailFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_resident_detail, container, false);
-
+         fab =view.findViewById(R.id.fab);
         fmResidentDetailName = view.findViewById(R.id.fmResidentDetailName);
         fmResidentDetailStartDate = view.findViewById(R.id.fmResidentDetailStartDate);
         fmResidentDetailOwner = view.findViewById(R.id.fmResidentDetailOwner);
         fmResidentDetailBottomAppBar = view.findViewById(R.id.fmResidentDetailBottomAppBar);
+        fmResidentDetailRequestButtonSee = view.findViewById(R.id.fmResidentDetailRequestButtonSee);
+        fmResidentDetailRequestButtonEdit = view.findViewById(R.id.fmResidentDetailRequestButtonEdit);
         fmResidentDetailRequestButton = view.findViewById(R.id.fmResidentDetailRequestButton);
         fmResidentDetailRequestList = view.findViewById(R.id.fmResidentDetailRequestList);
         fmResidentDetailComment  = view.findViewById(R.id.fmResidentDetailComment);
         fmResidentDetailNote = view.findViewById(R.id.fmResidentDetailNote);
         fmResidentDetailDestination = view.findViewById(R.id.fmResidentDetailDestination);
-
+        fmResidentDetailRequestList.setVisibility(View.GONE);
+        fmResidentDetailRequestButtonEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showUpdateFragment();
+            }
+        });
+        fmResidentDetailRequestButtonSee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fmResidentDetailRequestList.setVisibility(View.VISIBLE);
+            }
+        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAddRequestFragment();
+            }
+        });
         fmResidentDetailBottomAppBar.setOnMenuItemClickListener(item -> menuItemSelected(item));
-        fmResidentDetailRequestButton.setOnClickListener(v -> showAddRequestFragment());
 
         showDetails();
         showRequestList();
